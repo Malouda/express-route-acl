@@ -1,0 +1,38 @@
+{
+  "name": "express-route-acl",
+  "version": "1.0.0",
+  "description": "Express Routes Access Control List",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "testW": "jest --watch",
+    "tsc": "tsc -w",
+    "start": "nodemon ./dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [
+    "acess conroll list",
+    "acl",
+    "middleware",
+    "access",
+    "authorize",
+    "express"
+  ],
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.11.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  },
+  "types": "index.d.ts",
+  "author": "Deonatus Mwilanga",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/supertest": "^2.0.9",
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^25.5.0",
+    "typescript": "^3.8.3"
+  }
+}
