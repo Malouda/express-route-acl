@@ -20,11 +20,11 @@ describe("tests register routes middleware",()=>{
     it('should register', function () {
         // console.log(app._router.stack.route)
         register([app._router],(data)=>{
-            expect(data).toEqual({
+            expect(data).toEqual([{
                 route: '/user/',
                 method: 'GET',
                 permission:'_FSLASH_USER_FSLASH__GET',
-            })
+            }])
         })
 
 

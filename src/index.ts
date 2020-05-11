@@ -24,20 +24,24 @@ function getMethod(method:{get:String,post:String,put:String,delete:String,patch
 }
 
 
-export function register(routes:Array<Router>,callBack:({route,method,permission})=>void ) {
+export function register(routes:Array<Router>,callBack:(arrayRoutes:Array<{}>)=>void ) {
+    
+    let arrayRoutes:Array<{  }>=[];
 
     for (let i=0; i<routes.length; i++) {
         routes[i].stack.map((data) => {
             if (data.route != undefined) {
                 let method = data.route?.methods;
                 let permission=`${getPermissionString(data.route.path)}_${getMethod(method)}`;
-                callBack({
+                arrayRoutes.push({
                     route: String(data.route?.path),
                     method: getMethod(method),
-                    permission,
+                    permission:permission
                 })
             }
         });
     }
+
+    callBack(arrayRoutes)
 
 }
