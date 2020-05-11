@@ -20,20 +20,22 @@ function getMethod(method) {
     return method.get ? "GET" : method.post ? "POST" : method.put ? "PUT" : method.delete ? "DELETE" : method.patch ? "PATCH" : "";
 }
 function register(routes, callBack) {
+    var arrayRoutes = [];
     for (var i = 0; i < routes.length; i++) {
         routes[i].stack.map(function (data) {
             var _a, _b;
             if (data.route != undefined) {
                 var method = (_a = data.route) === null || _a === void 0 ? void 0 : _a.methods;
                 var permission = getPermissionString(data.route.path) + "_" + getMethod(method);
-                callBack({
+                arrayRoutes.push({
                     route: String((_b = data.route) === null || _b === void 0 ? void 0 : _b.path),
                     method: getMethod(method),
-                    permission: permission,
+                    permission: permission
                 });
             }
         });
     }
+    callBack(arrayRoutes);
 }
 exports.register = register;
 //# sourceMappingURL=index.js.map

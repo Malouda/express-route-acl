@@ -1,6 +1,6 @@
 {
   "name": "express-route-acl",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Express Routes Access Control List",
   "main": "./dist/index.js",
   "scripts": {
